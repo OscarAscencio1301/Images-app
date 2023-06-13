@@ -12,13 +12,14 @@ const Form = ({ addCategorie }: PropsForm) => {
 
     const onSubmit = (e: FormEvent) => {
         e.preventDefault()
+        console.log('Hola desde el submit')
         if(form.trim().length < 1) return
         addCategorie(form)
         setform('')
     }
 
     return (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} aria-label="form-label">
             <Input form={form} setform={setform} />
         </form>
     )
